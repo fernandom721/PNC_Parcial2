@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Libros</title>
+</head>
+<body>
+<h1>Ingrese un nuevo libro</h1>
+
+<form th:action="@{ins_book}" th:object="${libro}" method="post">
+    <label>Titulo: </label>
+    <input th:field="*{s_titulo}" placeholder="Libro"><br>
+    <span th:errors="*{s_titulo}" /><br>
+
+    <label>Autor: </label>
+    <input th:field="*{s_autor}" placeholder="Libro"><br>
+    <span th:errors="*{s_autor}" /><br>
+
+    <label>Categoria</label>
+    <select th:field="*{c_categoria.c_categoria}">
+        <option th:each="imp : ${categoria}" th:value="${imp.c_categoria}" th:text="${imp.s_categoria}"></option>
+    </select>
+
+
+    <label>Estado </label>
+    <input type="radio" th:field="*{b_estado}" th:value="true"><label>activo</label>
+    <input type="radio" th:field="*{b_estado}" th:value="false"><label>inactivo</label><br>
+
+    <label>Codigo: </label>
+    <input th:field="*{s_isbn}" placeholder="Libro"><br>
+    <span th:errors="*{s_isbn}" /><br>
+
+    <input type="submit" value="Guardar">
+</form>
+
+</body>
+</html>

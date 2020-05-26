@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Libros</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <th>Titulo</th>
+    <th>Autor</th>
+    <th>ISBN</th>
+    <th>Categoria</th>
+    <th>Fecha</th>
+    </thead>
+    <th:block th:each="libros, row:${libros}">
+        <tr>
+            <th th:text="${libros.s_titulo}"/>
+            <th th:text="${libros.s_autor}"/>
+            <th th:text="${libros.c_categoria}"/>
+            <th th:text="${libros.f_ingreso}"/>
+        </tr>
+
+    </th:block>
+</table>
+
+</body>
+</html>

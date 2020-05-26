@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Categorias</title>
+</head>
+<body>
+<h1>Ingrese una nueva categoria</h1>
+
+<form th:action="@{ins_category}" th:object="${categoria}" method="post">
+    <label>Nombre de la categoria: </label>
+    <input th:field="*{s_categoria}" placeholder="Categoria"><br>
+    <span th:errors="*{s_categoria}"></span><br>
+
+    <input type="submit" value="Guardar">
+</form>
+
+</body>
+</html>
