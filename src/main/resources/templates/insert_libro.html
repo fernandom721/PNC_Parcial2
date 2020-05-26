@@ -10,29 +10,39 @@
 <h1>Ingrese un nuevo libro</h1>
 
 <form th:action="@{ins_book}" th:object="${libro}" method="post">
-    <label>Titulo: </label>
-    <input th:field="*{s_titulo}" placeholder="Libro"><br>
-    <span th:errors="*{s_titulo}" /><br>
+    <div class="form-group">
+        <label>Titulo: </label>
+        <input th:field="*{s_titulo}" placeholder="Libro"><br>
+        <span th:errors="*{s_titulo}" /><br>
+    </div>
 
-    <label>Autor: </label>
-    <input th:field="*{s_autor}" placeholder="Libro"><br>
-    <span th:errors="*{s_autor}" /><br>
+    <div class="form-group">
+        <label>Autor: </label>
+        <input th:field="*{s_autor}" placeholder="Libro"><br>
+        <span th:errors="*{s_autor}" /><br>
+    </div>
 
-    <label>Categoria</label>
-    <select th:field="*{c_categoria.c_categoria}">
-        <option th:each="imp : ${categoria}" th:value="${imp.c_categoria}" th:text="${imp.s_categoria}"></option>
-    </select>
+    <div class="form-group">
+        <label>Categoria</label>
+        <select th:field="*{c_categoria.c_categoria}">
+            <option th:each="imp : ${categoria}" th:value="${imp.c_categoria}" th:text="${imp.s_categoria}"></option>
+        </select>
+    </div>
 
 
-    <label>Estado </label>
-    <input type="radio" th:field="*{b_estado}" th:value="true"><label>activo</label>
-    <input type="radio" th:field="*{b_estado}" th:value="false"><label>inactivo</label><br>
+    <div class="form-group">
+        <label>Estado </label>
+        <input type="radio" th:field="*{b_estado}" th:value="true"><label>activo</label>
+        <input type="radio" th:field="*{b_estado}" th:value="false"><label>inactivo</label><br>
+    </div>
 
-    <label>Codigo: </label>
-    <input th:field="*{s_isbn}" placeholder="Libro"><br>
-    <span th:errors="*{s_isbn}" /><br>
+    <div class="form-group">
+        <label>Codigo: </label>
+        <input th:field="*{s_isbn}" placeholder="Libro"><br>
+        <span th:errors="*{s_isbn}" /><br>
+    </div>
 
-    <input type="submit" value="Guardar">
+    <input class="btn btn-primary" type="submit" value="Guardar">
 </form>
 
 </body>

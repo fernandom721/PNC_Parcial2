@@ -10,11 +10,12 @@
 <h1>Ingrese una nueva categoria</h1>
 
 <form th:action="@{ins_category}" th:object="${categoria}" method="post">
+    <div class="form-group">
     <label>Nombre de la categoria: </label>
     <input th:field="*{s_categoria}" placeholder="Categoria"><br>
     <span th:errors="*{s_categoria}"></span><br>
-
-    <input type="submit" value="Guardar">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Guardar">
 </form>
 
 </body>

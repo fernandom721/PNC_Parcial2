@@ -8,20 +8,20 @@
 </head>
 <body>
 
-<table>
+<table class="table">
     <thead>
-    <th>Titulo</th>
-    <th>Autor</th>
-    <th>ISBN</th>
-    <th>Categoria</th>
-    <th>Fecha</th>
+    <th scope="col">Titulo</th>
+    <th scope="col">Autor</th>
+    <th scope="col">ISBN</th>
+    <th scope="col">Categoria</th>
+    <th scope="col">Fecha</th>
     </thead>
     <th:block th:each="libros, row:${libros}">
         <tr>
-            <th th:text="${libros.s_titulo}"/>
-            <th th:text="${libros.s_autor}"/>
-            <th th:text="${libros.c_categoria}"/>
-            <th th:text="${libros.f_ingreso}"/>
+            <th scope="row" th:text="${libros.s_titulo}"/>
+            <th scope="row" th:text="${libros.s_autor}"/>
+            <th scope="row" th:text="${libros.c_categoria}"/>
+            <th scope="row" th:text="${libros.f_ingreso}"/>
         </tr>
 
     </th:block>
